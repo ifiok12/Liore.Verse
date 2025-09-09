@@ -12,13 +12,923 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <link rel="icon" type="image/png" href="LIORE_VERSE_LOGO.png"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+
+     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #000000;
+      --secondary: #4F0C0C;
+      --accent: #D4AF37;
+      --light: #FFF2E2;
+      --dark: #1A1A1A;
+      --gray: #8A8A8A;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      background-color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80') no-repeat center center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 16px 45px;
+      background-color: var(--accent);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      border: 2px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-cta:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .hero-cta:hover {
+      color: white;
+    }
+
+    .hero-cta:hover:before {
+      left: 0;
+    }
+
+      :root {
+            --primary: #000000;
+            --secondary: #4F0C0C;
+            --accent: #D4AF37;
+            --light: #FFF2E2;
+            --dark: #1A1A1A;
+            --gray: #8A8A8A;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Collection Intro - Redesigned */
+        .collection-intro {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .collection-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .collection-text-block {
+            padding: 20px;
+        }
+
+        .collection-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .collection-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: var(--transition);
+            height: 400px;
+        }
+
+        .collection-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .collection-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .no-risk-divider {
+            text-align: center;
+            margin: 70px 0;
+            position: relative;
+        }
+
+        .no-risk-divider:before,
+        .no-risk-divider:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 35%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .no-risk-divider:before {
+            left: 0;
+        }
+
+        .no-risk-divider:after {
+            right: 0;
+        }
+
+        .no-risk {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--secondary);
+            font-style: italic;
+            display: inline-block;
+            padding: 0 30px;
+            position: relative;
+        }
+
+        .no-risk:before, .no-risk:after {
+            content: '"';
+            font-size: 42px;
+            color: var(--accent);
+            position: relative;
+            top: 5px;
+        }
+
+        /* Alternate layout for second content block */
+        .collection-content.reverse {
+            direction: rtl;
+        }
+
+        .collection-content.reverse > * {
+            direction: ltr;
+        }
+
+        /* Decorative elements */
+        .decorative-element {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .deco-1 {
+            top: 20%;
+            left: 5%;
+            font-size: 120px;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            transform: rotate(-15deg);
+        }
+
+        .deco-2 {
+            bottom: 15%;
+            right: 5%;
+            font-size: 100px;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            transform: rotate(10deg);
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .collection-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .collection-content.reverse {
+                direction: ltr;
+            }
+            
+            .collection-image {
+                height: 350px;
+            }
+            
+            .no-risk-divider:before,
+            .no-risk-divider:after {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .collection-intro {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 50px;
+            }
+            
+            .collection-text {
+                font-size: 16px;
+            }
+            
+            .no-risk {
+                font-size: 28px;
+            }
+            
+            .no-risk-divider:before,
+            .no-risk-divider:after {
+                width: 25%;
+            }
+            
+            .deco-1, .deco-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .no-risk {
+                font-size: 24px;
+                padding: 0 15px;
+            }
+            
+            .no-risk:before, .no-risk:after {
+                font-size: 32px;
+            }
+            
+            .no-risk-divider:before,
+            .no-risk-divider:after {
+                width: 20%;
+            }
+        }
+    /* Products Section */
+    .products {
+      padding: 100px 0;
+      background-color: var(--dark);
+      color: white;
+      position: relative;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .product-card {
+      background: linear-gradient(145deg, #1e1e1e, #252525);
+      padding: 25px;
+      border-radius: 8px;
+      transition: var(--transition);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .product-image {
+      height: 300px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .product-cta {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-cta:hover {
+      background-color: white;
+      color: var(--dark);
+    }
+
+       /* Storytelling Section (Replaces Brand Story) */
+        .storytelling {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+
+        .storytelling-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .storytelling-image {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .storytelling-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .storytelling-text h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .storytelling-text p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+     /* Story Elements Section (Replaces Advantages) */
+        .story-elements {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+            position: relative;
+        }
+
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .element-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .element-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .element-icon {
+            font-size: 50px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .element-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .element-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 0;
+      background-color: var(--light);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-details h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .author-details p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    /* Instagram Feed */
+    .instagram-feed {
+      padding: 80px 0;
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .instagram-item {
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .instagram-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .instagram-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .instagram-item:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .instagram-item:hover:after {
+      opacity: 1;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 120px 0;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+
+    .cta-title {
+      font-size: 48px;
+      margin-bottom: 25px;
+    }
+
+    .cta-text {
+      max-width: 600px;
+      margin: 0 auto 50px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      padding: 80px 0 30px;
+      background-color: var(--dark);
+      color: white;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-column h3 {
+      font-size: 18px;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-5px);
+    }
+
+    .newsletter-form {
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background: var(--accent);
+      color: var(--dark);
+      border: none;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+      .hero-title {
+        font-size: 70px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 60px;
+      }
+      
+      .story-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .story-image {
+        order: -1;
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 40px;
+      }
+      
+      .section-title {
+        font-size: 32px;
+      }
+      
+      .hero-subtitle {
+        font-size: 14px;
+      }
+      
+      .story-image {
+        height: 300px;
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 30px;
+        right: 30px;
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 36px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .products-grid, .advantages-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+
+
+
+
+
+      /* Collection Intro - New Styles */
+        .collection-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .collection-image {
+            border-radius: 10px;
+            overflow: hidden;
+            
+        }
+
+        .collection-image img {
+            width: 80%;
+            height: auto;
+            display: block;
+        }
+
+        .collection-text-block {
+            padding: 20px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .collection-intro-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .collection-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .collection-intro-content {
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <!-- Logo Section -->
             <a class="navbar-brand" href="index.html">
-                <img src="LIORE_VERSE_LOGO.png" alt="Logo" width="80" height="80" style="border-radius:50%; margin-right:10px;">
+                <img src="LIORE_VERSE_LOGO.png" alt="Logo" width="50" height="50" style="border-radius:50%; margin-right:10px;">
                 <span class="logo-text">LIORE VERSE</span>
             </a>
             
@@ -37,7 +947,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-briefcase me-1"></i> Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="indexxxxx.html"><i class="fas fa-book-open me-1"></i>Story</a>
+                        <a class="nav-link" href="#"><i class="fas fa-book-open me-1"></i>Story</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="indexxxx.html"><i class="fas fa-file-contract me-1"></i> Our Policies</a>
@@ -47,14 +957,303 @@
                     </li>
                 </ul>
                 
-                <!-- Login/Get Started Buttons -->
-                <div class="navbar-buttons d-flex">
-                    <button class="btn btn-login me-2"><i class="fas fa-sign-in-alt me-1"></i> Sign Up</button>
-                    <button class="btn btn-get-started"><i class="fas fa-play-circle me-1"></i> Get Started</button>
-                </div>
+
             </div>
         </div>
     </nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Drop 001</p>
+      <h1 class="hero-title">NO RISK NO STORY</h1>
+      <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="hero-cta">Explore Collection</a>
+    </div>
+  </section>
+
+   <!-- Collection Intro -->
+    <section class="collection-intro">
+        <div class="container">
+            <h2 class="section-title">THE FOUNDER'S ERA</h2>
+            
+            <!-- Decorative elements -->
+            <div class="decorative-element deco-1">RISK</div>
+            <div class="decorative-element deco-2">STORY</div>
+            
+            <!-- Founders Era with Image -->
+            <div class="collection-content">
+                <div class="collection-text-block">
+                    <p class="collection-text">Behind every name remembered is a risk that was taken. No legend, no movement, no breakthrough ever began safely. That is the foundation of Liore Verse. Each cap in Drop 001 carries more than fabric, it carries a statement. A mark for those who choose courage over comfort, action over talk.</p>
+                    <p class="collection-text">Our Founder's Era collection honors those pivotal moments when visionaries dared to begin despite uncertainty, creating legacies that would inspire generations to come.</p>
+                </div>
+                <div class="collection-image">
+                    <img src="The founders era-image.png" alt="The Founder's Era">
+                </div>
+            </div>
+            
+            <div class="no-risk-divider">
+                <p class="no-risk">NO RISK NO STORY</p>
+            </div>
+            
+            <!-- No Risk No Story with Image -->
+            <div class="collection-content reverse">
+                <div class="collection-text-block">
+                    <p class="collection-text">Before the brand. Before the recognition. There was the vision. The Founder's Era is a tribute to the early days, the long nights, and the quiet confidence that it would all work out. It's built with vintage soul, for those who remember why they started.</p>
+                    <p class="collection-text">Each piece in this collection tells a story of resilience, embodying the spirit of entrepreneurship and the courage required to transform an idea into reality against all odds.</p>
+                </div>
+                <div class="collection-image">
+                    <img src="No risk no story-picture.png" alt="No Risk No Story">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Products Section -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">DROP 001 COLLECTION</h2>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="caps.jpg">
+          </div>
+          <h3 class="product-title">Denim Blue Baseball Cap</h3>
+          <p class="product-price">$30</p>
+          <a href="#" class="product-cta">Add to Cart</a>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="CAP3.png">
+          </div>
+          <h3 class="product-title">Ash Washed Baseball Cap</h3>
+          <p class="product-price">$30</p>
+          <a href="#" class="product-cta">Add to Cart</a>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="CAPS1.jpg">
+          </div>
+          <h3 class="product-title">Black Premium Cap</h3>
+          <p class="product-price">$35</p>
+          <a href="#" class="product-cta">Add to Cart</a>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="CAP2.png" alt="Heritage Collection Cap">
+          </div>
+          <h3 class="product-title">Heritage Collection Cap</h3>
+          <p class="product-price">$32</p>
+          <a href="#" class="product-cta">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Storytelling Section (Replaces Brand Story) -->
+    <section class="storytelling">
+        <div class="container">
+            <div class="storytelling-content">
+                <div class="storytelling-text">
+                    <h2>EVERY CAP TELLS A STORY</h2>
+                    <p>At Liore Verse, we believe that behind every great achievement lies a story of risk, perseverance, and vision. Our caps are more than just accessories; they are symbols of the journeys that define us.</p>
+                    <p>Each design is inspired by real stories of entrepreneurs, innovators, and creators who dared to take the first step into the unknown. We weave these narratives into the very fabric of our products.</p>
+                    <p>When you wear a Liore Verse cap, you're not just making a fashion statement—you're embracing a mindset. You're declaring that you understand that without risk, there can be no reward, and without challenge, there can be no growth.</p>
+                </div>
+                
+                <div class="storytelling-image">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Storytelling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Story Elements Section (Replaces Advantages) -->
+    <section class="story-elements">
+        <div class="container">
+            <h2 class="section-title">THE ELEMENTS OF OUR STORY</h2>
+            
+            <div class="elements-grid">
+                <div class="element-card">
+                    <div class="element-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="element-title">VISION</h3>
+                    <p>Every great story begins with a vision. We design with purpose, creating pieces that inspire you to see beyond the horizon.</p>
+                </div>
+                
+                <div class="element-card">
+                    <div class="element-icon">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3 class="element-title">COURAGE</h3>
+                    <p>The courage to begin is what separates dreamers from doers. Our designs celebrate the boldness to start.</p>
+                </div>
+                
+                <div class="element-card">
+                    <div class="element-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="element-title">HERITAGE</h3>
+                    <p>We honor the stories of those who came before us, drawing inspiration from pioneers across generations.</p>
+                </div>
+                
+                <div class="element-card">
+                    <div class="element-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3 class="element-title">LEGACY</h3>
+                    <p>What story will you create? Our pieces are designed to become part of your journey and legacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The quality of these caps is exceptional. I've received countless compliments since I started wearing Liore Verse."</p>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+            </div>
+            <div class="author-details">
+              <h4>Michael Chen</h4>
+              <p>Fashion Influencer</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The attention to detail is remarkable. You can really feel the story behind each design."</p>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+            </div>
+            <div class="author-details">
+              <h4>Sarah Johnson</h4>
+              <p>Creative Director</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">"I appreciate brands with a message. Liore Verse combines style with substance in a way that's rare these days."</p>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Customer">
+            </div>
+            <div class="author-details">
+              <h4>James Wilson</h4>
+              <p>Entrepreneur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed -->
+  <section class="instagram-feed">
+    <div class="container">
+      <h2 class="section-title">FOLLOW US ON INSTAGRAM</h2>
+      <p>
+        <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="instagram-handle">@lioreverse</a></p>
+      
+      <div class="instagram-grid">
+        <div class="instagram-item">
+          <img src="capliore.png" alt="Instagram Post">
+        </div>
+        <div class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Instagram Post">
+        </div>
+        <div class="instagram-item">
+          <img src="caps9.png" alt="Instagram Post">
+        </div>
+        <div class="instagram-item">
+          <img src="cap12.png" alt="Instagram Post">
+        </div>
+        <div class="instagram-item">
+          <img src="cap10.png" alt="Instagram Post">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">JOIN THE MOVEMENT</h2>
+      <p class="cta-text">Be part of the story. Embrace the risk. Create your legend with Liore Verse's first collection.</p>
+      <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="hero-cta">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>LIORE VERSE</h3>
+          <p>Where fashion meets freedom. Creating stories through design and innovation.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>HELP</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Product Care</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="https://wa.me/+2349022365117" target="_blank">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>NEWSLETTER</h3>
+          <p>Subscribe to get special offers, free giveaways, and new collection announcements.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 LIORE VERSE. All rights reserved. No Risk No Story.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/+2349022365117" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
     <!-- Bootstrap & Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -62,3 +1261,7 @@
     <script src="msin.js"></script>
 </body>
 </html>
+
+
+
+

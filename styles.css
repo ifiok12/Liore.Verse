@@ -187,17 +187,6 @@ body {
         margin: 0.3rem 0;
     }
     
-    .navbar-buttons {
-        margin-top: 1rem;
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-    }
-    
-    .btn-login, .btn-get-started {
-        width: 100%;
-        text-align: center;
-    }
 }
 
 @media (max-width: 575.98px) {
