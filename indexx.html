@@ -59,406 +59,510 @@
     }
 
     /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80') no-repeat center center/cover;
-      color: white;
-    }
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG_7987.JPG') no-repeat center center/cover;
+  color: white;
+}
 
-    .hero-content {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-      animation: fadeIn 1.5s ease;
-    }
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .hero-subtitle {
-      font-size: 18px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      color: var(--accent);
-      font-weight: 400;
-    }
+.hero-subtitle {
+  font-size: 18px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-weight: 400;
+}
 
-    .hero-title {
-      font-size: 80px;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
+.hero-title {
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
 
-    .hero-cta {
-      display: inline-block;
-      padding: 16px 45px;
-      background-color: var(--accent);
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: var(--transition);
-      border: 2px solid var(--accent);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
+.hero-cta {
+  display: inline-block;
+  padding: 16px 45px;
+  background-color: var(--accent);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition);
+  border: 2px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 40px;
+}
 
-    .hero-cta:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--primary);
-      transition: var(--transition);
-      z-index: -1;
-    }
+.hero-cta:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  transition: var(--transition);
+  z-index: -1;
+}
 
-    .hero-cta:hover {
-      color: white;
-    }
+.hero-cta:hover {
+  color: white;
+}
 
-    .hero-cta:hover:before {
-      left: 0;
-    }
+.hero-cta:hover:before {
+  left: 0;
+}
 
-      :root {
-            --primary: #000000;
-            --secondary: #4F0C0C;
-            --accent: #D4AF37;
-            --light: #FFF2E2;
-            --dark: #1A1A1A;
-            --gray: #8A8A8A;
-            --transition: all 0.3s ease;
-        }
+/* Hero Writeup Styling */
+.hero-writeup {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-left: 4px solid var(--accent);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.hero-writeup p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-style: italic;
+}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
+.hero-writeup .closing-line {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0;
+}
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
+/* Founder's Era Section */
+.founders-era {
+  padding: 100px 0;
+  background: linear-gradient(to right, #f9f5f0, #f2ebe1);
+  position: relative;
+  overflow: hidden;
+}
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.founders-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
 
-        /* Collection Intro - Redesigned */
-        .collection-intro {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
+.founders-text-block {
+  padding: 20px;
+}
 
-        .section-title {
-            font-size: 42px;
-            margin-bottom: 60px;
-            text-align: center;
-            position: relative;
-        }
+.founders-text {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--dark);
+}
 
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
+.founders-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  transition: var(--transition);
+  height: 450px;
+}
 
-        .collection-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 70px;
-        }
+.founders-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
 
-        .collection-text-block {
-            padding: 20px;
-        }
+.founders-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
 
-        .collection-text {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
+.founders-image:hover img {
+  transform: scale(1.03);
+}
 
-        .collection-image {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            transition: var(--transition);
-            height: 400px;
-        }
+.founders-quote {
+  background: var(--accent);
+  color: var(--dark);
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 30px;
+  position: relative;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+}
 
-        .collection-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
+.founders-quote:before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 60px;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.2;
+}
 
-        .collection-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
+/* Section Title */
+.section-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+}
 
-        .collection-image:hover img {
-            transform: scale(1.05);
-        }
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary);
+}
 
-        .no-risk-divider {
-            text-align: center;
-            margin: 70px 0;
-            position: relative;
-        }
+/* Decorative elements */
+.decorative-element {
+  position: absolute;
+  opacity: 0.05;
+  z-index: 0;
+}
 
-        .no-risk-divider:before,
-        .no-risk-divider:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 35%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
+.deco-1 {
+  top: 20%;
+  left: 5%;
+  font-size: 120px;
+  color: var(--secondary);
+  font-family: 'Playfair Display', serif;
+  transform: rotate(-15deg);
+}
 
-        .no-risk-divider:before {
-            left: 0;
-        }
+.deco-2 {
+  bottom: 15%;
+  right: 5%;
+  font-size: 100px;
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+  transform: rotate(10deg);
+}
 
-        .no-risk-divider:after {
-            right: 0;
-        }
+/* Responsive design */
+@media (max-width: 992px) {
+  .founders-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .founders-image {
+    height: 400px;
+    order: -1;
+  }
+  
+  .hero-title {
+    font-size: 60px;
+  }
+  
+  .hero-writeup {
+    padding: 25px;
+  }
+}
 
-        .no-risk {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--secondary);
-            font-style: italic;
-            display: inline-block;
-            padding: 0 30px;
-            position: relative;
-        }
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+  }
+  
+  .hero-writeup p {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .founders-text {
+    font-size: 16px;
+  }
+  
+  .founders-image {
+    height: 350px;
+  }
+  
+  .deco-1, .deco-2 {
+    display: none;
+  }
+}
 
-        .no-risk:before, .no-risk:after {
-            content: '"';
-            font-size: 42px;
-            color: var(--accent);
-            position: relative;
-            top: 5px;
-        }
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-writeup {
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .founders-quote {
+    padding: 20px;
+    font-size: 16px;
+  }
+}    
 
-        /* Alternate layout for second content block */
-        .collection-content.reverse {
-            direction: rtl;
-        }
 
-        .collection-content.reverse > * {
-            direction: ltr;
-        }
+/* Products Section */
+.products {
+  padding: 100px 0;
+  background-color: var(--dark);
+  color: white;
+  position: relative;
+}
 
-        /* Decorative elements */
-        .decorative-element {
-            position: absolute;
-            opacity: 0.05;
-            z-index: 0;
-        }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+  margin-top: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-        .deco-1 {
-            top: 20%;
-            left: 5%;
-            font-size: 120px;
-            color: var(--secondary);
-            font-family: 'Playfair Display', serif;
-            transform: rotate(-15deg);
-        }
+.product-card {
+  background: linear-gradient(145deg, #1e1e1e, #252525);
+  border-radius: 12px;
+  transition: var(--transition);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-        .deco-2 {
-            bottom: 15%;
-            right: 5%;
-            font-size: 100px;
-            color: var(--accent);
-            font-family: 'Playfair Display', serif;
-            transform: rotate(10deg);
-        }
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
 
-        /* Responsive design */
-        @media (max-width: 992px) {
-            .collection-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .collection-content.reverse {
-                direction: ltr;
-            }
-            
-            .collection-image {
-                height: 350px;
-            }
-            
-            .no-risk-divider:before,
-            .no-risk-divider:after {
-                width: 30%;
-            }
-        }
+.product-image {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
 
-        @media (max-width: 768px) {
-            .collection-intro {
-                padding: 60px 0;
-            }
-            
-            .section-title {
-                font-size: 32px;
-                margin-bottom: 50px;
-            }
-            
-            .collection-text {
-                font-size: 16px;
-            }
-            
-            .no-risk {
-                font-size: 28px;
-            }
-            
-            .no-risk-divider:before,
-            .no-risk-divider:after {
-                width: 25%;
-            }
-            
-            .deco-1, .deco-2 {
-                display: none;
-            }
-        }
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
 
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .no-risk {
-                font-size: 24px;
-                padding: 0 15px;
-            }
-            
-            .no-risk:before, .no-risk:after {
-                font-size: 32px;
-            }
-            
-            .no-risk-divider:before,
-            .no-risk-divider:after {
-                width: 20%;
-            }
-        }
-    /* Products Section */
-    .products {
-      padding: 100px 0;
-      background-color: var(--dark);
-      color: white;
-      position: relative;
-    }
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
 
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
 
-    .product-card {
-      background: linear-gradient(145deg, #1e1e1e, #252525);
-      padding: 25px;
-      border-radius: 8px;
-      transition: var(--transition);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-    }
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
 
-    .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    }
+.quick-view-btn {
+  padding: 12px 25px;
+  background: var(--accent);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: var(--transition);
+}
 
-    .product-image {
-      height: 300px;
-      margin-bottom: 25px;
-      overflow: hidden;
-      border-radius: 5px;
-      position: relative;
-    }
+.quick-view-btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
 
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
+.product-details {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-    .product-card:hover .product-image img {
-      transform: scale(1.05);
-    }
+.product-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
 
-    .product-title {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
+.product-description {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
 
-    .product-price {
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
+.product-price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
 
-    .product-cta {
-      display: inline-block;
-      padding: 12px 25px;
-      border: 1px solid white;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
 
-    .product-cta:hover {
-      background-color: white;
-      color: var(--dark);
-    }
+.product-cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 30px;
+  flex-grow: 1;
+  text-align: center;
+  margin-right: 15px;
+}
 
+.product-cta:hover {
+  background-color: white;
+  color: var(--dark);
+  transform: translateY(-3px);
+}
+
+.wishlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.wishlist-btn:hover {
+  background: var(--secondary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    padding: 80px 0;
+  }
+  
+  .product-image {
+    height: 280px;
+  }
+  
+  .product-details {
+    padding: 20px;
+  }
+  
+  .product-title {
+    font-size: 20px;
+  }
+  
+  .product-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .product-cta {
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .wishlist-btn {
+    width: 100%;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    gap: 40px;
+  }
+  
+  .product-image {
+    height: 250px;
+  }
+  
+  .product-title {
+    font-size: 18px;
+  }
+  
+  .product-price {
+    font-size: 20px;
+  }
+}
        /* Storytelling Section (Replaces Brand Story) */
         .storytelling {
             padding: 100px 0;
@@ -966,97 +1070,95 @@
 
 
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-in" data-aos-duration="1500">
-    <div class="hero-content" data-aos="fade-up" data-aos-delay="300">
-      <p class="hero-subtitle">Drop 001</p>
-      <h1 class="hero-title">NO RISK NO STORY</h1>
-      <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="hero-cta">Explore Collection</a>
+<!-- Hero Section -->
+<section class="hero" data-aos="fade-in" data-aos-duration="1500">
+  <div class="hero-content" data-aos="fade-up" data-aos-delay="300">
+    <p class="hero-subtitle">Drop 001</p>
+    <h1 class="hero-title">NO RISK NO STORY</h1>
+    <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="hero-cta">Explore Collection</a>
+    
+    <!-- Added No Risk No Story Writeup -->
+    <div class="hero-writeup" data-aos="fade-up" data-aos-delay="500">
+      <p>Behind every name remembered is a risk that was taken. No legend, no movement, no breakthrough ever began safely. That is the foundation of Liore Verse.</p>
+      <p>Each cap in Drop 001 carries more than fabric, it carries a statement. A mark for those who choose courage over comfort, action over talk.</p>
+      <p>This goes beyond a hat. This is your tale in motion.</p>
+      <p class="closing-line">Because, in the end, No Risk, No Story.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-   <!-- Collection Intro -->
-    <section class="collection-intro">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">THE FOUNDER'S ERA</h2>
-            
-            <!-- Decorative elements -->
-            <div class="decorative-element deco-1">RISK</div>
-            <div class="decorative-element deco-2">STORY</div>
-            
-            <!-- Founders Era with Image -->
-            <div class="collection-content">
-                <div class="collection-text-block" data-aos="fade-right" data-aos-delay="200">
-                    <p class="collection-text">Behind every name remembered is a risk that was taken. No legend, no movement, no breakthrough ever began safely. That is the foundation of Liore Verse. Each cap in Drop 001 carries more than fabric, it carries a statement. A mark for those who choose courage over comfort, action over talk.</p>
-                    <p class="collection-text">Our Founder's Era collection honors those pivotal moments when visionaries dared to begin despite uncertainty, creating legacies that would inspire generations to come.</p>
-                </div>
-                <div class="collection-image" data-aos="fade-left" data-aos-delay="400">
-                    <img src="The founders era-image.png" alt="The Founder's Era">
-                </div>
-            </div>
-            
-            <div class="no-risk-divider">
-                <p class="no-risk" data-aos="zoom-in" data-aos-delay="300">NO RISK NO STORY</p>
-            </div>
-            
-            <!-- No Risk No Story with Image -->
-            <div class="collection-content reverse">
-                <div class="collection-text-block" data-aos="fade-left" data-aos-delay="200">
-                    <p class="collection-text">Before the brand. Before the recognition. There was the vision. The Founder's Era is a tribute to the early days, the long nights, and the quiet confidence that it would all work out. It's built with vintage soul, for those who remember why they started.</p>
-                    <p class="collection-text">Each piece in this collection tells a story of resilience, embodying the spirit of entrepreneurship and the courage required to transform an idea into reality against all odds.</p>
-                </div>
-                <div class="collection-image" data-aos="fade-right" data-aos-delay="400">
-                    <img src="No risk no story-picture.png" alt="No Risk No Story">
-                </div>
-            </div>
+<!-- Founder's Era Section -->
+<section class="founders-era">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">THE FOUNDER'S ERA</h2>
+    
+    <!-- Decorative elements -->
+    <div class="decorative-element deco-1">VISION</div>
+    <div class="decorative-element deco-2">LEGACY</div>
+    
+    <!-- Founders Era Content -->
+    <div class="founders-content">
+      <div class="founders-text-block" data-aos="fade-right" data-aos-delay="200">
+        <p class="founders-text">Before the brand. Before the recognition. There was the vision. The Founder's Era is a tribute to the early days, the long nights, and the quiet confidence that it would all work out.</p>
+        <p class="founders-text">It's built with vintage soul, for those who remember why they started.</p>
+        
+        <div class="founders-quote" data-aos="zoom-in" data-aos-delay="400">
+          "Every great achievement was once considered impossible"
         </div>
-    </section>
+      </div>
+      <div class="founders-image" data-aos="fade-left" data-aos-delay="300">
+        <img src="IMG_7984.JPG" alt="The Founder's Era">
+      </div>
+    </div>
+  </div>
+</section>
 
 
-  <!-- Products Section -->
-  <section class="products" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">DROP 001 COLLECTION</h2>
-      
-      <div class="products-grid">
-        <div class="product-card" data-aos="flip-up" data-aos-delay="100">
-          <div class="product-image">
-            <img src="caps.jpg">
+ <!-- Products Section -->
+<section class="products" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">DROP 001 COLLECTION</h2>
+    
+    <div class="products-grid">
+      <div class="product-card" data-aos="flip-up" data-aos-delay="100">
+        <div class="product-image">
+          <img src="caps.jpg" alt="Denim Blue Baseball Cap">
+          <div class="product-overlay">
+            <a href="#" class="quick-view-btn">Quick View</a>
           </div>
+        </div>
+        <div class="product-details">
           <h3 class="product-title">Denim Blue Baseball Cap</h3>
+          <p class="product-description">Premium denim fabric with embroidered logo</p>
           <p class="product-price">$30</p>
-          <a href="#" class="product-cta">Add to Cart</a>
-        </div>
-        
-        <div class="product-card" data-aos="flip-up" data-aos-delay="200">
-          <div class="product-image">
-            <img src="CAP3.png">
+          <div class="product-actions">
+            <a href="#" class="product-cta">Add to Cart</a>
+            <a href="#" class="wishlist-btn"><i class="far fa-heart"></i></a>
           </div>
-          <h3 class="product-title">Ash Washed Baseball Cap</h3>
-          <p class="product-price">$30</p>
-          <a href="#" class="product-cta">Add to Cart</a>
         </div>
-        
-        <div class="product-card" data-aos="flip-up" data-aos-delay="300">
-          <div class="product-image">
-            <img src="CAPS1.jpg">
+      </div>
+      
+      <div class="product-card" data-aos="flip-up" data-aos-delay="200">
+        <div class="product-image">
+          <img src="CAPS1.jpg" alt="Black Premium Cap">
+          <div class="product-overlay">
+            <a href="#" class="quick-view-btn">Quick View</a>
           </div>
+        </div>
+        <div class="product-details">
           <h3 class="product-title">Black Premium Cap</h3>
+          <p class="product-description">Luxury black fabric with premium stitching</p>
           <p class="product-price">$35</p>
-          <a href="#" class="product-cta">Add to Cart</a>
-        </div>
-        
-        <div class="product-card" data-aos="flip-up" data-aos-delay="400">
-          <div class="product-image">
-            <img src="CAP2.png" alt="Heritage Collection Cap">
+          <div class="product-actions">
+            <a href="#" class="product-cta">Add to Cart</a>
+            <a href="#" class="wishlist-btn"><i class="far fa-heart"></i></a>
           </div>
-          <h3 class="product-title">Heritage Collection Cap</h3>
-          <p class="product-price">$32</p>
-          <a href="#" class="product-cta">Add to Cart</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Storytelling Section (Replaces Brand Story) -->
     <section class="storytelling">
