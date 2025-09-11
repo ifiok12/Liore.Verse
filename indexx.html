@@ -60,7 +60,7 @@
 
     /* Hero Section */
 .hero {
-  height: 100vh;
+  height: 95vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -164,7 +164,7 @@
 /* Founder's Era Section */
 .founders-era {
   padding: 100px 0;
-  background: linear-gradient(to right, #f9f5f0, #f2ebe1);
+  background: #fff2e2;
   position: relative;
   overflow: hidden;
 }
@@ -190,20 +190,26 @@
 .founders-image {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.15);
   transition: var(--transition);
-  height: 450px;
+  height: 400px; /* Keep a fixed height if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff2e2; /* Add background color for any empty space */
 }
 
 .founders-image:hover {
   transform: translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
 
 .founders-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+ width:100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; /* Show full image without cropping */
   transition: var(--transition);
 }
 
@@ -259,23 +265,6 @@
   z-index: 0;
 }
 
-.deco-1 {
-  top: 20%;
-  left: 5%;
-  font-size: 120px;
-  color: var(--secondary);
-  font-family: 'Playfair Display', serif;
-  transform: rotate(-15deg);
-}
-
-.deco-2 {
-  bottom: 15%;
-  right: 5%;
-  font-size: 100px;
-  color: var(--accent);
-  font-family: 'Playfair Display', serif;
-  transform: rotate(10deg);
-}
 
 /* Responsive design */
 @media (max-width: 992px) {
@@ -564,44 +553,137 @@
   }
 }
        /* Storytelling Section (Replaces Brand Story) */
-        .storytelling {
-            padding: 100px 0;
-            background-color: var(--light);
-            position: relative;
-        }
+.storytelling {
+    padding: 80px 0;
+    background-color: var(--light);
+    position: relative;
+}
 
-        .storytelling-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+.storytelling-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
 
-        .storytelling-image {
-            height: 500px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+.storytelling-image {
+    height: 370px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
 
-        .storytelling-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.storytelling-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
-        .storytelling-text h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
-            color: var(--secondary);
-        }
+.storytelling-text h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: var(--secondary);
+}
 
-        .storytelling-text p {
-            margin-bottom: 25px;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-     /* Story Elements Section (Replaces Advantages) */
+.storytelling-text p {
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Responsive Design for Storytelling Section */
+@media (max-width: 1200px) {
+    .storytelling-content {
+        gap: 50px;
+    }
+    
+    .storytelling-image {
+        height: 450px;
+    }
+    
+    .storytelling-text h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    .storytelling {
+        padding: 70px 0;
+    }
+    
+    .storytelling-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .storytelling-image {
+        height: 400px;
+        order: -1; /* Image first on mobile */
+    }
+    
+    .storytelling-text h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .storytelling-text p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .storytelling {
+        padding: 60px 0;
+    }
+    
+    .storytelling-content {
+        gap: 35px;
+    }
+    
+    .storytelling-image {
+        height: 350px;
+    }
+    
+    .storytelling-text h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .storytelling-text p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .storytelling {
+        padding: 50px 0;
+    }
+    
+    .storytelling-image {
+        height: 300px;
+        border-radius: 8px;
+    }
+    
+    .storytelling-text h2 {
+        font-size: 24px;
+    }
+    
+    .storytelling-text p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 400px) {
+    .storytelling-image {
+        height: 250px;
+    }
+    
+    .storytelling-text h2 {
+        font-size: 22px;
+    }
+}     /* Story Elements Section (Replaces Advantages) */
         .story-elements {
             padding: 100px 0;
             background: linear-gradient(to bottom, #f8f8f8, #ffffff);
@@ -1053,7 +1135,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-briefcase me-1"></i> Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-book-open me-1"></i>Story</a>
+                        <a class="nav-link" href="indexxxxxx.html"><i class="fas fa-book-open me-1"></i>Story</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="indexxxx.html"><i class="fas fa-file-contract me-1"></i> Our Policies</a>
@@ -1081,7 +1163,7 @@
     <div class="hero-writeup" data-aos="fade-up" data-aos-delay="500">
       <p>Behind every name remembered is a risk that was taken. No legend, no movement, no breakthrough ever began safely. That is the foundation of Liore Verse.</p>
       <p>Each cap in Drop 001 carries more than fabric, it carries a statement. A mark for those who choose courage over comfort, action over talk.</p>
-      <p>This goes beyond a hat. This is your tale in motion.</p>
+      <p>This is your tale in motion.</p>
       <p class="closing-line">Because, in the end, No Risk, No Story.</p>
     </div>
   </div>
@@ -1092,9 +1174,6 @@
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">THE FOUNDER'S ERA</h2>
     
-    <!-- Decorative elements -->
-    <div class="decorative-element deco-1">VISION</div>
-    <div class="decorative-element deco-2">LEGACY</div>
     
     <!-- Founders Era Content -->
     <div class="founders-content">
@@ -1103,11 +1182,11 @@
         <p class="founders-text">It's built with vintage soul, for those who remember why they started.</p>
         
         <div class="founders-quote" data-aos="zoom-in" data-aos-delay="400">
-          "Every great achievement was once considered impossible"
+          "Every noble work is at first impossible." - Thomas Carlyle
         </div>
       </div>
       <div class="founders-image" data-aos="fade-left" data-aos-delay="300">
-        <img src="IMG_7984.JPG" alt="The Founder's Era">
+        <img src="IMG_7984.JPG" width="px" alt="The Founder's Era">
       </div>
     </div>
   </div>
@@ -1132,7 +1211,7 @@
           <p class="product-description">Premium denim fabric with embroidered logo</p>
           <p class="product-price">$30</p>
           <div class="product-actions">
-            <a href="#" class="product-cta">Add to Cart</a>
+            <a class="product-cta">Adjustable</a>
             <a href="#" class="wishlist-btn"><i class="far fa-heart"></i></a>
           </div>
         </div>
@@ -1146,11 +1225,11 @@
           </div>
         </div>
         <div class="product-details">
-          <h3 class="product-title">Black Premium Cap</h3>
+          <h3 class="product-title">Ash Washed Baseball Cap</h3>
           <p class="product-description">Luxury black fabric with premium stitching</p>
-          <p class="product-price">$35</p>
+          <p class="product-price">$30</p>
           <div class="product-actions">
-            <a href="#" class="product-cta">Add to Cart</a>
+            <a class="product-cta">Adjustable</a>
             <a href="#" class="wishlist-btn"><i class="far fa-heart"></i></a>
           </div>
         </div>
@@ -1161,22 +1240,23 @@
 
 
   <!-- Storytelling Section (Replaces Brand Story) -->
-    <section class="storytelling">
-        <div class="container">
-            <div class="storytelling-content">
-                <div class="storytelling-text" data-aos="fade-right" data-aos-delay="200">
-                    <h2 data-aos="fade-right">EVERY CAP TELLS A STORY</h2>
-                    <p>At Liore Verse, we believe that behind every great achievement lies a story of risk, perseverance, and vision. Our caps are more than just accessories; they are symbols of the journeys that define us.</p>
-                    <p>Each design is inspired by real stories of entrepreneurs, innovators, and creators who dared to take the first step into the unknown. We weave these narratives into the very fabric of our products.</p>
-                    <p>When you wear a Liore Verse cap, you're not just making a fashion statement—you're embracing a mindset. You're declaring that you understand that without risk, there can be no reward, and without challenge, there can be no growth.</p>
-                </div>
-                
-                <div class="storytelling-image" data-aos="fade-left" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Storytelling">
-                </div>
+<section class="storytelling">
+    <div class="container">
+        <div class="storytelling-content">
+            <div class="storytelling-text" data-aos="fade-right" data-aos-delay="200">
+                <h2 data-aos="fade-right">EVERY CAP TELLS A STORY</h2>
+                <p>At Liore Verse, we believe that behind every great achievement lies a story of risk, perseverance, and vision. Our caps are more than just accessories; they are symbols of the journeys that define us.</p>
+                <p>Each design is inspired by real stories of entrepreneurs, innovators, and creators who dared to take the first step into the unknown. We weave these narratives into the very fabric of our products.</p>
+                <p>When you wear a Liore Verse cap, you're not just making a fashion statement—you're embracing a mindset. You're declaring that you understand that without risk, there can be no reward, and without challenge, there can be no growth.</p>
+            </div>
+            
+            <div class="storytelling-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="IMG_7983.JPG" alt="Storytelling">
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
    <!-- Story Elements Section (Replaces Advantages) -->
     <section class="story-elements" data-aos="fade-up">
