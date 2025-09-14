@@ -37,71 +37,274 @@ body.loaded {
 }
 
 
-    /* Logo Header */
-    .logo-header {
-      background: #FFF2E2;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-      position: relative;
-      z-index: 100;
-    }
-    
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .logo-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 极.15);
-      transition: all 0.3s ease;
-    }
-    
-    .logo-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .logo-text {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 2rem;
-      color: #4F0C0C;
-      letter-spacing: 0.5px;
-      position: relative;
-    }
-    
-    .logo-text::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(to right, #8e2d2d, #4F0C0C);
-      border-radius: 2px;
-    }
-    
-    .logo-subtitle {
-      font-size: 1rem;
-      color: #8e2d2d;
-      font-weight: 400;
-      margin-left: 15px;
-      padding-left: 15px;
-      border-left: 2px solid #f3d8d8;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+/* Enhanced Logo Header */
+.logo-header {
+  background: linear-gradient(135deg, #FFF8F1 0%, #FFF2E2 50%, #FFECD6 100%);
+  padding: 2rem 0;
+  box-shadow: 0 4px 25px rgba(79, 12, 12, 0.08);
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(142, 45, 45, 0.1);
+}
+
+.logo-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8e2d2d, #4F0C0C, #8e2d2d);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo Image Styling */
+.logo-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 
+    0 8px 25px rgba(79, 12, 12, 0.15),
+    0 4px 12px rgba(142, 45, 45, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+}
+
+.logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(142, 45, 45, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.logo-img:hover {
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 
+    0 12px 35px rgba(79, 12, 12, 0.25),
+    0 6px 18px rgba(142, 45, 45, 0.15);
+}
+
+.logo-img:hover + .logo-glow {
+  opacity: 1;
+}
+
+/* Logo Text Content */
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-family: 'Montserrat', 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.logo-main {
+  color: #4F0C0C;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(79, 12, 12, 0.1);
+}
+
+.logo-accent {
+  color: #8e2d2d;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.logo-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8e2d2d, #d4554d);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: expandLine 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes expandLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Tagline Styling */
+.tagline-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #8e2d2d;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  position: relative;
+  padding-left: 1rem;
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out 0.8s forwards;
+}
+
+.logo-subtitle::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 1.2rem;
+  color: #d4554d;
+  font-weight: bold;
+}
+
+.logo-subtitle::after {
+  content: '"';
+  position: absolute;
+  right: -8px;
+  top: -2px;
+  font-size: 1.2rem;
+  color: #d4554d;
+  font-weight: bold;
+}
+
+.tagline-decoration {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #8e2d2d, transparent);
+  border-radius: 1px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 1.2s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .logo-header {
+    padding: 1.5rem 0;
+  }
+  
+  .logo-container {
+    gap: 1rem;
+  }
+  
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logo-glow {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .tagline-decoration {
+    width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .logo-text {
+    font-size: 1.6rem;
+    justify-content: center;
+  }
+  
+  .tagline-wrapper {
+    justify-content: center;
+  }
+  
+  .logo-subtitle::before,
+  .logo-subtitle::after {
+    display: none;
+  }
+}
 
     /* Stories Page Header */
     .stories-header {
@@ -281,70 +484,7 @@ body.loaded {
       margin-right: 8px;
     }
 
-    /* Footer */
-    .stories-footer {
-      text-align: center;
-      padding: 60极 0;
-      background-color: #4F0C0C;
-      color: #f3d8d8;
-      position: relative;
-      overflow: hidden;
-      margin-top: 40px;
-    }
     
-    .stories-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343极3 3 3zm63 31极1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f3d8d8' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.3;
-    }
-    
-    .stories-footer .container {
-      position: relative;
-    }
-    
-    .stories-footer p {
-      max-width: 600px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-    }
-    
-    .footer-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-    
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(255, 242, 226, 0.1);
-      color: #f3d8d8;
-      transition: all 0.3s ease;
-    }
-    
-    .social-links a:hover {
-      background: #FFF2E2;
-      color: #4F0C0C;
-      transform: translateY(-5px);
-    }
-
     /* Responsive Design */
     @media (max-width: 968px) {
       .story-image-container {
@@ -441,15 +581,15 @@ body.loaded {
 </head>
 <body>
   <!-- Logo Header -->
-  <header class="logo-header">
-    <div class="logo-container">
-      <img src="LIORE_VERSE_LOGO.png" alt="Liore Verse Logo" class="logo-img">
-      <div>
-        <h1 class="logo-text">LIORE VERSE</h1>
-        <span class="logo-subtitle">No Risk, No Story</span>
-      </div>
+<header class="logo-header">
+  <div class="container logo-container">
+    <img src="LIORE_VERSE_LOGO.png" alt="Liore Verse Logo" class="logo-img">
+    <div class="logo-info">
+      <h1 class="logo-text">LIORE VERSE</h1>
+      <span class="logo-subtitle">No Risk, No Story</span>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Stories Page Header -->
   <header class="stories-header">
@@ -492,20 +632,9 @@ body.loaded {
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="stories-footer">
-    <div class="container">
-      <p class="footer-quote">"Courage is not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear." - Nelson Mandela</p>
-      <p>© 2025 No Risk, No Story. All rights reserved.</p>
+
       
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </footer>
+     
 
   <script>
     // Smooth scrolling for back to top button
@@ -541,7 +670,7 @@ body.loaded {
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
   });
-  
+
   </script>
 </body>
 </html>
