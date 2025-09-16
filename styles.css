@@ -212,3 +212,48 @@ body {
         padding: 0.35rem 1rem;
     }
 }
+
+
+
+.cap-owners {
+  margin-top: 60px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-top: 2px solid #ddd;
+  text-align: center;
+}
+
+.cap-owners h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.cap-owners ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cap-owners li {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: inline-block;
+  width: 80%;
+  max-width: 500px;
+}
+
+.cap-owners .cap-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.cap-owners .owner-name {
+  color: #555;
+  margin-left: 8px;
+}

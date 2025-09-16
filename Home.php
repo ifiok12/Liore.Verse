@@ -1,3 +1,5 @@
+<?php require 'db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +33,7 @@
     :root {
       --primary: #000000;
       --secondary: #4F0C0C;
-      --accent: #D4AF37;
+      --accent: #fff2e2;
       --light: #FFF2E2;
       --dark: #1A1A1A;
       --gray: #8A8A8A;
@@ -715,7 +717,7 @@
 /* Story Elements Section (Replaces Advantages) */
         .story-elements {
             padding: 100px 0;
-            background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+            background: linear-gradient(to bottom,#4f0c0c11, #fff2e2);
             position: relative;
         }
 
@@ -1120,11 +1122,9 @@
             <div class="collapse navbar-collapse nav-items-container" id="navbarContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="Home.html"><i class="fas fa-home me-1"></i> Home</a>
+                        <a class="nav-link active" href="Home.php"><i class="fas fa-home me-1"></i> Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-briefcase me-1"></i> Services</a>
-                    </li>
+                  
                     <li class="nav-item">
                         <a class="nav-link" href="Story.html"><i class="fas fa-book-open me-1"></i>Story</a>
                     </li>
@@ -1342,7 +1342,7 @@
   <section class="instagram-feed" data-aos="fade-up">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">FOLLOW US ON INSTAGRAM</h2>
-      <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="instagram-handle" data-aos="fade-up" data-aos-delay="100" style="color:#D4AF37;">@lioreverse</a>
+      <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" class="instagram-handle" data-aos="fade-up" data-aos-delay="100" style="color:#fff2e2;">@lioreverse</a>
       </div>
     </div>
   </section>
@@ -1365,9 +1365,9 @@
           <p>Creating stories through design and innovation.</p>
           <div class="social-links">
             <a href="https://www.instagram.com/liore_verse?igsh=MXJhbjNqb2RoYWFvYQ==" target="_blank" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-instagram"></i></a>
-            <a href="#" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-twitter"></i></a>
-            <a href="#" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-pinterest"></i></a>
+            <a href="https://x.com/liore_verse" target="_blank" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/share/19KJCxbZBk/?mibextid=wwXIfr" target="_blank" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://pin.it/6EUbs3Msv" target="_blank" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-pinterest"></i></a>
           </div>
         </div>
         
@@ -1391,20 +1391,35 @@
           </ul>
         </div>
         
-        <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
-          <h3>NEWSLETTER</h3>
-          <p>Subscribe to get special offers, free giveaways, and new collection announcements.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Your email address">
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
+       
       
       <div class="copyright">
         <p>© 2025 LIORE VERSE. All rights reserved. No Risk No Story.</p>
       </div>
     </div>
+
+
+
+
+   <?php
+// Get the latest 10 caps from the database
+$stmt = $pdo->query("SELECT * FROM caps ORDER BY created_at DESC LIMIT 10");
+$caps = $stmt->fetchAll();
+?>
+
+<section class="cap-owners">
+  <h3>Cap Owners</h3>
+  <ul>
+    <?php foreach($caps as $cap): ?>
+      <li>
+        <span class="cap-name"><?php echo htmlspecialchars($cap['cap_name']); ?></span>
+        <span class="owner-name">— Owned by <?php echo htmlspecialchars($cap['owner_name']); ?></span>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+</section>
+
+
   </footer>
 
   <!-- WhatsApp Float -->
